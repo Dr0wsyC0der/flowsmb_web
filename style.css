@@ -60,6 +60,11 @@ body {
     margin: 0 auto;
 }
 
+/* Логотип смещен в левый угол */
+.nav-brand {
+    margin-right: auto;
+}
+
 .nav-brand a {
     font-size: 1.8rem;
     font-weight: 800;
@@ -71,8 +76,8 @@ body {
 }
 
 .nav-brand a::before {
-    content: "⚡";
-    margin-right: 0.5rem;
+    content: "";
+    margin-right: -22rem;
     color: var(--accent);
     font-size: 2rem;
 }
@@ -82,6 +87,7 @@ body {
     list-style: none;
     gap: 2rem;
     align-items: center;
+    margin-left: auto;
 }
 
 .nav-menu a {
@@ -127,6 +133,7 @@ body {
     transition: all 0.3s ease !important;
     border: none;
     cursor: pointer;
+    margin-left: 1rem;
 }
 
 .btn-demo:hover {
@@ -397,7 +404,7 @@ section {
     line-height: 1.6;
 }
 
-/* Solution Section */
+/* Solution Section - Блоки в одну строку без выделения */
 .solution {
     background: var(--background);
     position: relative;
@@ -405,44 +412,49 @@ section {
 
 .solution-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     margin-top: 3rem;
 }
 
 .solution-item {
-    padding: 2.5rem;
+    padding: 2rem 1.5rem;
     background: var(--white);
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     text-align: center;
-    border-top: 4px solid var(--accent);
+    border: 1px solid var(--border);
     position: relative;
 }
 
 .solution-item::before {
-    content: '🚀';
-    font-size: 2rem;
+    content: '✓';
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     display: block;
+    color: var(--success);
+    font-weight: bold;
 }
 
 .solution-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
 }
 
 .solution-item h3 {
     color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    line-height: 1.4;
 }
 
 .solution-item p {
     color: var(--text-light);
-    line-height: 1.6;
+    line-height: 1.5;
+    font-size: 0.9rem;
 }
 
 /* Advantages Section */
@@ -635,7 +647,7 @@ td:nth-child(3), td:nth-child(4) {
     opacity: 0.9;
 }
 
-/* Footer */
+/* Footer - Красивые блоки для контактов */
 .footer {
     background: var(--primary);
     color: var(--white);
@@ -655,30 +667,78 @@ td:nth-child(3), td:nth-child(4) {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
+}
+
+.footer-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.footer-section:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .footer h3, .footer h4 {
     color: var(--white);
     margin-bottom: 1.5rem;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer h3::before, .footer h4::before {
+    font-size: 1.2rem;
+}
+
+.footer-brand h3::before {
+    content: "";
+    color: var(--accent);
+}
+
+.footer-contacts h4::before {
+    content: "📞";
+}
+
+.footer-social h4::before {
+    content: "🌐";
+}
+
+.footer-links h4::before {
+    content: "📄";
 }
 
 .footer p {
     color: rgba(255,255,255,0.8);
     line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 .footer a {
     color: rgba(255,255,255,0.8);
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     margin-bottom: 0.8rem;
     transition: all 0.3s ease;
     position: relative;
-    padding-left: 0;
+    padding: 0.3rem 0;
+}
+
+.footer a::before {
+    content: '→';
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .footer a:hover {
@@ -686,23 +746,22 @@ td:nth-child(3), td:nth-child(4) {
     transform: translateX(5px);
 }
 
-.footer a::before {
-    content: '→';
-    position: absolute;
-    left: -1rem;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
 .footer a:hover::before {
     opacity: 1;
-    left: -0.5rem;
 }
 
-.footer-brand h3::before {
-    content: "⚡";
-    margin-right: 0.5rem;
-    color: var(--accent);
+/* Social links with icons */
+.footer-social a[href*="linkedin"]::before {
+    content: "💼";
+}
+
+.footer-social a[href*="telegram"]::before {
+    content: "✈️";
+}
+
+.footer-social a::before {
+    opacity: 1 !important;
+    font-size: 1rem;
 }
 
 /* Mobile menu toggle */
@@ -723,6 +782,18 @@ td:nth-child(3), td:nth-child(4) {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .mobile-toggle {
         display: block;
@@ -790,7 +861,11 @@ td:nth-child(3), td:nth-child(4) {
     
     .footer-content {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-section {
+        padding: 1.5rem;
     }
     
     .footer a:hover {
@@ -823,6 +898,10 @@ td:nth-child(3), td:nth-child(4) {
     
     .lead-form {
         padding: 2rem 1.5rem;
+    }
+    
+    .footer-section {
+        padding: 1.5rem 1rem;
     }
 }
 
