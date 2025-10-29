@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Отраслевые решения FLOWSMB для вашего бизнеса</title>
-    <meta name="description" content="Специализированные решения для производств, логистики, финансового сектора и ритейла. Оптимизация бизнес-процессов в вашей отрасли">
+    <meta name="description"
+        content="Специализированные решения для производств, логистики, финансового сектора и ритейла. Оптимизация бизнес-процессов в вашей отрасли">
     <link rel="stylesheet" href="style.css">
     <style>
         .industry-tabs {
@@ -12,7 +14,9 @@
             gap: 1rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
+            justify-content: space-around;
         }
+
         .industry-tab {
             padding: 1rem 2rem;
             background: #f5f7fa;
@@ -21,24 +25,33 @@
             cursor: pointer;
             transition: all 0.3s;
         }
+
         .industry-tab.active {
             background: #0A1A3A;
             color: white;
         }
+
         .industry-content {
             display: none;
         }
+
         .industry-content.active {
             display: block;
         }
+
         .solution-detail {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             margin-bottom: 2rem;
         }
+
+        .solution-detail h3 {
+            padding: 15px 0;
+        }
     </style>
 </head>
+
 <body>
     <header class="header">
         <nav class="nav">
@@ -89,8 +102,8 @@
 
             <div id="manufacturing" class="industry-content active">
                 <div class="solution-detail">
-                    <h2>Решение для производственных предприятий</h2>
-                    
+                    <h2>Решение для производства</h2>
+
                     <div class="problem-section">
                         <h3>Типичные проблемы в производстве:</h3>
                         <ul>
@@ -134,7 +147,7 @@
             <div id="logistics" class="industry-content">
                 <div class="solution-detail">
                     <h2>Решение для логистики и дистрибуции</h2>
-                    
+
                     <div class="problem-section">
                         <h3>Типичные проблемы в логистике:</h3>
                         <ul>
@@ -168,7 +181,7 @@
             <div id="finance" class="industry-content">
                 <div class="solution-detail">
                     <h2>Решение для финансового сектора</h2>
-                    
+
                     <div class="problem-section">
                         <h3>Типичные проблемы в финансовом секторе:</h3>
                         <ul>
@@ -202,7 +215,7 @@
             <div id="retail" class="industry-content">
                 <div class="solution-detail">
                     <h2>Решение для ритейла</h2>
-                    
+
                     <div class="problem-section">
                         <h3>Типичные проблемы в ритейле:</h3>
                         <ul>
@@ -291,10 +304,10 @@
                 document.querySelectorAll('.industry-tab').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.industry-content').forEach(c => c.classList.remove('active'));
                 document.querySelectorAll('.industry-form').forEach(f => f.classList.remove('active'));
-                
+
                 // Add active class to clicked tab
                 tab.classList.add('active');
-                
+
                 // Show corresponding content
                 const industry = tab.dataset.industry;
                 document.getElementById(industry).classList.add('active');
@@ -304,4 +317,5 @@
     </script>
     <script src="script.js"></script>
 </body>
+
 </html>
