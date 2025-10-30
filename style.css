@@ -37,60 +37,62 @@ body {
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    .hero {
+        --section-bg: #F8FAFC;
+        /* начало градиента */
+        --section-bg-end: #FFFFFF;
+        /* конец градиента */
+        --next-bg: #FFFFFF;
+        /* к problem */
+    }
+
+    .problem {
+        --section-bg: #FFFFFF;
+        --next-bg: #F8FAFC;
+        /* к solution */
+    }
+
+    .solution {
+        --section-bg: #F8FAFC;
+        --next-bg: #FFFFFF;
+        /* к advantages */
+    }
+
+    .advantages {
+        --section-bg: #FFFFFF;
+        --next-bg: #F8FAFC;
+        /* к audience */
+    }
+
+    .audience {
+        --section-bg: #F8FAFC;
+        --next-bg: #0A1A3A;
+        /* к final-cta */
+    }
+
+    .final-cta {
+        --section-bg: #0A1A3A;
+        --section-bg-end: #1E3A8A;
+    }
+
+    .inquiry-section {
+        --section-bg: #F8FAFC;
+        --next-bg: #FFFFFF;
+    }
+
+    .contact-map-section {
+        --section-bg: #FFFFFF;
+        --next-bg: #F8FAFC;
+    }
+
+    .demo-form-section {
+        --section-bg: #F8FAFC;
+        --next-bg: #0A1A3A;
+    }
 }
 
-.hero {
-    --section-bg: #F8FAFC;
-    /* начало градиента */
-    --section-bg-end: #FFFFFF;
-    /* конец градиента */
-    --next-bg: #FFFFFF;
-    /* к problem */
-}
 
-.problem {
-    --section-bg: #FFFFFF;
-    --next-bg: #F8FAFC;
-    /* к solution */
-}
-
-.solution {
-    --section-bg: #F8FAFC;
-    --next-bg: #FFFFFF;
-    /* к advantages */
-}
-
-.advantages {
-    --section-bg: #FFFFFF;
-    --next-bg: #F8FAFC;
-    /* к audience */
-}
-
-.audience {
-    --section-bg: #F8FAFC;
-    --next-bg: #0A1A3A;
-    /* к final-cta */
-}
-
-.final-cta {
-    --section-bg: #0A1A3A;
-    --section-bg-end: #1E3A8A;
-}
-
-.inquiry-section {
-    --section-bg: #F8FAFC;
-    --next-bg: #FFFFFF;
-}
-
-.contact-map-section {
-    --section-bg: #FFFFFF;
-    --next-bg: #F8FAFC;
-}
-
-.demo-form-section {
-    --section-bg: #F8FAFC;
-    --next-bg: #0A1A3A;
-}
 
 /* Header */
 .header {
