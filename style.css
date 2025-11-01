@@ -60,10 +60,18 @@ body {
         /* к advantages */
     }
 
-    /* .integrations {
+    .tech-stack {
+        --section-bg: #FFFFFF;
+        /* текущий фон tech */
+        --next-bg: #F8FAFC;
+        /* фон .integrations */
+    }
+
+    .integrations {
         --section-bg: #F8FAFC;
-        --next-bg: #FFFFFF;
-    } */
+        --next-bg: #0A1A3A;
+        /* к final-cta */
+    }
 
     .advantages {
         --section-bg: #FFFFFF;
@@ -421,6 +429,10 @@ section:not(:last-child)::after {
     display: none;
 }
 
+.integrations::after {
+    display: none;
+}
+
 .container {
     position: relative;
     z-index: 2;
@@ -584,6 +596,70 @@ section h2 {
     padding: 32px;
 }
 
+.integrations {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.integration-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.integration-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .1);
+}
+
+.integration-icon {
+    margin-bottom: 20px;
+}
+
+.integration-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.integration-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+}
+
+.integration-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
 
 /* Advantages Section */
 .advantages {
@@ -645,40 +721,40 @@ td:nth-child(4) {
 }
 
 .module-item {
-  display: flex;
-  align-items: center;
-  gap: 80px; 
+    display: flex;
+    align-items: center;
+    gap: 80px;
 }
 
 .module-item:nth-child(even) {
-  flex-direction: row-reverse; 
+    flex-direction: row-reverse;
 }
 
 .module-content {
-  flex: 1;
+    flex: 1;
 }
 
 .module-visual {
-  flex: 1; 
+    flex: 1;
 }
 
 .image-placeholder {
-  background: #eee;
-  padding: 40px;
-  text-align: center;
-  border: 1px dashed #ccc;
+    background: #eee;
+    padding: 40px;
+    text-align: center;
+    border: 1px dashed #ccc;
 }
 
 .benefits-list {
-  list-style: none;
-  padding-left: 25px;  
-  margin: 0;       
+    list-style: none;
+    padding-left: 25px;
+    margin: 0;
 }
 
 .benefits-list li::marker {
-  color: #62868a;     
-  font-size: 1.2em;   
-  content: "➤ ";      
+    color: #62868a;
+    font-size: 1.2em;
+    content: "➤ ";
 }
 
 
@@ -687,40 +763,40 @@ td:nth-child(4) {
 }
 
 .tech-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .tech-item {
-  display: inline-block;   
-  padding: 10px;           
-  margin: 0;               
-  max-width: 50%;          
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
+    max-width: 50%;
 }
 
 .tech-item:nth-child(even) {
-  margin-left: auto;       
+    margin-left: auto;
 }
 
 .tech-item h4 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .tech-item ul {
-  list-style: disc;
-  padding-left: 25px;
-  margin: 0;
+    list-style: disc;
+    padding-left: 25px;
+    margin: 0;
 }
 
 .tech-item li::marker {
-  color: #62868a;
-  font-size: 1.2em;
-  content: "➤ ";
+    color: #62868a;
+    font-size: 1.2em;
+    content: "➤ ";
 }
 
 .tech-item li {
-  color: var(--text-light);
+    color: var(--text-light);
 }
 
 
@@ -1321,6 +1397,15 @@ td:nth-child(4) {
     .map-wrapper {
         height: 350px;
     }
+
+    .integrations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
 }
 
 
