@@ -50,52 +50,60 @@ document.addEventListener('DOMContentLoaded', function () {
 // Функция для мобильного меню
 function createMobileMenu() {
     const nav = document.querySelector('.nav-menu');
-    if (!nav) return;
+    const navContainer = document.querySelector('.nav');
+    if (!nav || !navContainer) return;
+
+    // Удаляем старый toggle
+    document.querySelectorAll('.mobile-toggle').forEach(el => el.remove());
 
     const toggle = document.createElement('button');
-    toggle.innerHTML = '☰';
     toggle.className = 'mobile-toggle';
-    toggle.style.cssText = `
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        z-index: 1001;
+    toggle.setAttribute('aria-label', 'Меню');
+    toggle.innerHTML = `
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
     `;
+    navContainer.appendChild(toggle);
 
-    document.querySelector('.nav').appendChild(toggle);
-
-    // Показ/скрытие меню
+    // Клик по бургеру
     toggle.addEventListener('click', (e) => {
         e.stopPropagation();
+        document.body.classList.toggle('menu-open');
         nav.classList.toggle('active');
+        toggle.classList.toggle('open');
     });
 
-    // Скрытие меню при клике вне его
+    // Закрытие при клике вне
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.nav')) {
-            nav.classList.remove('active');
+        if (!navContainer.contains(e.target)) {
+            closeMenu();
         }
     });
 
-    // Адаптивность меню
+    // Закрытие по ссылкам
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    function closeMenu() {
+        document.body.classList.remove('menu-open');
+        nav.classList.remove('active');
+        toggle.classList.remove('open');
+    }
+
+    // Ресайз
     function handleResize() {
-        if (window.innerWidth <= 900) {
-            toggle.style.display = 'block';
-            nav.style.display = 'none';
-        } else {
+        if (window.innerWidth > 900) {
+            closeMenu();
             toggle.style.display = 'none';
-            nav.style.display = 'flex';
+        } else {
+            toggle.style.display = 'flex';
         }
     }
 
-    // Обработчик ресайза
     window.addEventListener('resize', handleResize);
-    handleResize(); // Инициализация при загрузке
+    handleResize();
 }
 
 // Обновление активной навигации
