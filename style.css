@@ -1641,7 +1641,6 @@ td:nth-child(4) {
 }
 
 @media (max-width: 900px) {
-    /* Показываем бургер */
     .mobile-toggle {
         display: flex;
         flex-direction: column;
@@ -1649,7 +1648,6 @@ td:nth-child(4) {
         justify-content: center;
     }
 
-    /* Меню: выезжает сверху, прокрутка, тень */
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -1693,7 +1691,6 @@ td:nth-child(4) {
         box-sizing: border-box;
     }
 
-    /* Последний пункт — без нижней границы */
     .nav-menu a:last-child,
     .nav-menu .btn-demo {
         border-bottom: none !important;
@@ -1707,7 +1704,6 @@ td:nth-child(4) {
         padding-left: 2.5rem !important;
     }
 
-    /* Активный пункт */
     .nav-menu a.active {
         color: var(--accent) !important;
         font-weight: 600 !important;
@@ -1758,12 +1754,10 @@ td:nth-child(4) {
         padding-left: 3.5rem !important;
     }
 
-    /* Блокируем скролл страницы при открытом меню */
     body.menu-open {
         overflow: hidden;
     }
 
-    /* Убираем hover-эффекты ссылок в футере */
     .footer a:hover {
         transform: none;
     }
@@ -1824,6 +1818,52 @@ td:nth-child(4) {
 
     .section h2 {
         font-size: 1.8rem;
+    }
+
+    .contact-details {
+        text-align: center !important;
+        padding: 2rem 1.5rem !important;
+    }
+
+    .contact-details h2,
+    .contact-details h3 {
+        text-align: center;
+        margin: 1.5rem auto 1rem !important;
+        font-size: 1.8rem !important;
+    }
+
+    .contact-details h3 {
+        font-size: 1.3rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .contact-address {
+        margin: 1rem auto !important;
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+    }
+
+    .contact-info-item {
+        margin: 1.5rem auto !important;
+        text-align: center !important;
+        max-width: 320px;
+    }
+
+    .contact-info-item strong {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 0.95rem;
+        color: var(--primary);
+    }
+
+    .contact-info-item br {
+        display: none; 
+    }
+
+    .contact-info-item a {
+        color: var(--accent) !important;
+        text-decoration: underline;
+        word-break: break-word;
     }
 
     .contact-map-grid {
