@@ -1602,9 +1602,7 @@ td:nth-child(4) {
     position: relative;
     overflow: hidden;
     display: block;
-
     min-height: auto;
-
 }
 
 
